@@ -75,7 +75,7 @@ def run_analysis():
 	header='TOP_OCCUPATIONS;NUMBER_CERTIFIED_APPLICATIONS;PERCENTAGE'+'\n'
 	occupations_file.write(header)
 	for i in sorted_Occupations[0:10]:
-		output_str=str(i[0])+';'+str(i[1])+';'+str((i[1]/Certified_Total)*100)+'%'+'\n'
+		output_str=str(i[0])+';'+str(i[1])+';'+str(round((i[1]/Certified_Total)*100,1))+'%'+'\n'
 		occupations_file.write(output_str)
 		print(str(i[0])+';'+str(i[1])+';'+str(round((i[1]/Certified_Total)*100,1))+'%')
 	occupations_file.close()	
@@ -88,7 +88,7 @@ def run_analysis():
 	header='TOP_STATES;NUMBER_CERTIFIED_APPLICATIONS;PERCENTAGE'+'\n'
 	states_file.write(header)
 	for j in sorted_States[0:10]:
-		output_state=str(j[0])+';'+str(j[1])+';'+str((j[1]/Certified_Total)*100)+'%'+'\n'
+		output_state=str(j[0])+';'+str(j[1])+';'+str(round((j[1]/Certified_Total)*100,1))+'%'+'\n'
 		states_file.write(output_state)
 		print(str(j[0])+';'+str(j[1])+';'+str(round((j[1]/Certified_Total)*100,1))+'%')
 	states_file.close()
