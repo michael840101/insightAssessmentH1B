@@ -2,7 +2,7 @@
 
 # Project Over View
 
-A newspaper editor was researching immigration data trends on H1B(H-1B, H-1B1, E-3) visa application processing over the past years, trying to identify the occupations and states with the most number of approved H1B visas. She has found statistics available from the US Department of Labor and its [Office of Foreign Labor Certification Performance Data](https://www.foreignlaborcert.doleta.gov/performancedata.cfm#dis). But while there are ready-made reports for [2018](https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2018/H-1B_Selected_Statistics_FY2018_Q4.pdf) and [2017](https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2017/H-1B_Selected_Statistics_FY2017.pdf), the site doesn’t have them for past years. 
+A newspaper editor was researching immigration data trends on H1B(H-1B, H-1B1, E-3) visa application processing over the past years, trying to identify the occupations and states with the most number of approved H1B visas. She has found statistics available from the US Department of Labor and its [Office of Foreign Labor Certification Performance Data](https://www.foreignlaborcert.doleta.gov/performancedata.cfm#dis). But while there are ready-made reports for [2018](https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2018/H-1B_Selected_Statistics_FY2018_Q4.pdf) and [2017](https://www.foreignlaborcert.doleta.gov/pdf/PerformanceData/2017/H-1B_Selected_Statistics_FY2017.pdf), the site doesn’t have them for past years.
 
 This project focuse implementing methods to analyze past years data, specificially calculate two metrics: **Top 10 Occupations** and **Top 10 States** for **certified** visa applications by using the python programing language.
 
@@ -13,12 +13,14 @@ The report file in the inpput directory prefered to be a single csv file sepeart
 
 # Input Dataset
 
-Raw data could be found [here](https://www.foreignlaborcert.doleta.gov/performancedata.cfm) under the __Disclosure Data__ tab (i.e., files listed in the __Disclosure File__ column with ".xlsx" extension). 
+Raw data could be found [here](https://www.foreignlaborcert.doleta.gov/performancedata.cfm) under the __Disclosure Data__ tab (i.e., files listed in the __Disclosure File__ column with ".xlsx" extension).
 The input Excel files are expected to be a semicolon separated (";") format and placed.
-**Note:** Each year of data can have different columns. Check **File Structure** files. 
+**Note:** Each year of data can have different columns. Check **File Structure** files.
 
 
-# Output 
+
+
+# Output
 
 There will be 2 output files in the output folder:
 * `top_10_occupations.txt`: Top 10 occupations for certified visa applications
@@ -29,7 +31,7 @@ Each line holds one record and each field on each line is separated by a semicol
 Each line of the `top_10_occupations.txt` file contain these fields in this order:
 1. __`TOP_OCCUPATIONS`__: Use the occupation name associated with an application's Standard Occupational Classification (SOC) code
 2. __`NUMBER_CERTIFIED_APPLICATIONS`__: Number of applications that have been certified for that occupation. An application is considered certified if it has a case status of `Certified`
-3. __`PERCENTAGE`__: % of applications that have been certified for that occupation compared to total number of certified applications regardless of occupation. 
+3. __`PERCENTAGE`__: % of applications that have been certified for that occupation compared to total number of certified applications regardless of occupation.
 
 The records in the file will be sorted by __`NUMBER_CERTIFIED_APPLICATIONS`__, and in case of a tie, alphabetically by __`TOP_OCCUPATIONS`__.
 
@@ -38,7 +40,7 @@ Each line of the `top_10_states.txt` file would contain these fields in this ord
 2. __`NUMBER_CERTIFIED_APPLICATIONS`__: Number of applications that have been certified for work in that state. An application is considered certified if it has a case status of `Certified`
 3. __`PERCENTAGE`__: % of applications that have been certified in that state compared to total number of certified applications regardless of state.
 
-The records in this file will be sorted by __`NUMBER_CERTIFIED_APPLICATIONS`__ field, and in case of a tie, alphabetically by __`TOP_STATES`__. 
+The records in this file will be sorted by __`NUMBER_CERTIFIED_APPLICATIONS`__ field, and in case of a tie, alphabetically by __`TOP_STATES`__.
 
 Depending on the input (e.g., see the example below), there may be fewer than 10 lines in each file. There, however, would not be more than 10 lines in each file. In case of ties, only list the top 10 based on the sorting instructions given above.
 
@@ -67,7 +69,7 @@ then your output files would be:
 TOP_OCCUPATIONS;NUMBER_CERTIFIED_APPLICATIONS;PERCENTAGE
 SOFTWARE DEVELOPERS, APPLICATIONS;6;60.0%
 ACCOUNTANTS AND AUDITORS;1;10.0%
-COMPUTER OCCUPATIONS, ALL OTHER;1;10.0% 
+COMPUTER OCCUPATIONS, ALL OTHER;1;10.0%
 COMPUTER SYSTEMS ANALYST;1;10.0%
 DATABASE ADMINISTRATORS;1;10.0%
 ```
@@ -83,12 +85,12 @@ MD;1;10.0%
 NJ;1;10.0%
 TX;1;10.0%
 WA;1;10.0%
-``` 
+```
 ## Repo directory structure
 
 The directory structure for this project look like this:
 ```
-      ├── README.md 
+      ├── README.md
       ├── run.sh
       ├── src
       │   └──h1b_counting.py
